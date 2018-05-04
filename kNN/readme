@@ -1,0 +1,9 @@
+1.[kNN_Digits.py] 
+
+the digits classification result:
+
+the total number of errors is: 10
+
+the total error rate is: 0.010571
+
+time used： 30.09460249511625
