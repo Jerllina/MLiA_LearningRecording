@@ -1,0 +1,15 @@
+【2 points of this unit with python3】
+① TypeError: 'dict_keys' object does not support indexing
+
+Replace this with:
+    firstSide = list(myTree.keys()) 
+    firstStr = firstSide[0]
+
+As in python2,' dict. Keys ()' gets a list, while in python3, this returns the class 'dict_keys' without an order, 
+so it cannot be indexed. 
+To obtain a list, replace it with  'list(dict. Keys ())' to make a coercion conversion.
+python2里，dict.keys()结果是一个列表，而python3中，返回的是class， 'dict_keys'没有索引顺序，不能index。
+因此需要用list()强制转换成列表。
+
+② xoff,yoff are both lowercases
+xoff,yoff 中的o都是小写
