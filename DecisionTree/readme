@@ -1,5 +1,5 @@
-【2 points of this unit with python3】
-① TypeError: 'dict_keys' object does not support indexing
+【4 points of this unit with python3】
+1.TypeError: 'dict_keys' object does not support indexing
 
 Replace this with:
     firstSide = list(myTree.keys()) 
@@ -11,5 +11,19 @@ To obtain a list, replace it with  'list(dict. Keys ())' to make a coercion conv
 python2里，dict.keys()结果是一个列表，而python3中，返回的是class， 'dict_keys'没有索引顺序，不能index。
 因此需要用list()强制转换成列表。
 
-② xoff,yoff are both lowercases
+2. xoff,yoff are both lowercases
 xoff,yoff 中的o都是小写
+
+3.TypeError: write() argument must be str, not bytes。
+def storeTree(inputTree, filename):
+    import pickle
+    fw = open(filename, 'wb')
+
+【I/O】 'w'→'wb' √
+
+4.UnicodeDecodeError: 'gbk' codec can't decode byte 0x80 in position 0: illegal multibyte sequence
+def grabTree(filename):
+    import pickle
+    fr = open(filename,'rb') 
+
+【I/O】 open(filename,'rb') √
