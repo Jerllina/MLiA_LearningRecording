@@ -1,0 +1,19 @@
+【1】I/O
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xae in position 199: illegal multibyte sequence
+Solution:   open('email/ham/%d.txt' % i)  →  open('email/ham/%d.txt' % i,'rb')
+
+【2】I/O
+TypeError: cannot use a string pattern on a bytes-like object
+Solution:    listOfTokens = re.split(r'\W*', bigString.decode('ISO-8859-1'))
+注：3.0现在的参数更改 ,读取的是bytes-like的，试过 bigString.decode('GBK') 和 bigString.decode('utf-8')都不可以 
+    而bigString.decode('ISO-8859-1') 可以 。就是说，文件里可能存在保存格式与我们默认读取方式不同的问题，需要decode
+
+【3】
+C:\ProgramData\Anaconda3\lib\re.py:212: FutureWarning: split() requires a non-empty pattern match.
+  return _compile(pattern, flags).split(string, maxsplit)
+Solution:    listOfTokens = re.split(r'\W*', bigString.decode('ISO-8859-1'))
+                                    ↓
+              re.split(r'\W+', bigString.decode('ISO-8859-1'))
+    r'\W*'  →   r'\W+'   
+注：
+re.split决定丢弃空的子字符串选项，分割一个或多个空格。 在python3.6中，它发出FutureWarning ，并告诉我们这个决定。可以用+代替*来表示自己。
