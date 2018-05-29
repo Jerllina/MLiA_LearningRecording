@@ -17,3 +17,8 @@ Solution:    listOfTokens = re.split(r'\W*', bigString.decode('ISO-8859-1'))
     r'\W*'  →   r'\W+'   
 注：
 re.split决定丢弃空的子字符串选项，分割一个或多个空格。 在python3.6中，它发出FutureWarning ，并告诉我们这个决定。可以用+代替*来表示自己。
+
+【4】
+ 'range' object doesn't support item deletion
+Solution：       trainingSet = range(50) → trainingSet = list(range(50))
+注：python3.x   range返回的是range对象，不返回数组对象，可使用list（）强制转换一下
