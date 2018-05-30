@@ -6,3 +6,33 @@ ValueError: x and y must have same first dimension, but have shapes (60,) and (1
 
 Solution:
     ax.plot(x, y.transpose()) 
+【2】
+def stocGradAscent0(dataMatrix, classLabels):
+    m,n = shape(dataMatrix)
+    alpha = 0.01
+    weights = ones(n)   #initialize to all ones
+    for i in range(m):
+        h = sigmoid(sum(dataMatrix[i]*weights))
+        error = classLabels[i] - h
+        weights = weights + alpha * error * dataMatrix[i]
+    return weights
+ 
+TypeError: 'numpy.float64' object cannot be interpreted as an integer
+Solution：
+        add this in the beginning if the function ：    dataMat=array(dataMatrix)  
+        注： 统一数据格式。error是float64，而dataMatrix[i]是一个列表。
+                用float64乘一个列表会报错的，将dataMatrix转换成numpy array再进行运算
+
+ValueError: shapes (1,3) and (1,3) not aligned: 3 (dim 1) != 1 (dim 0)
+Solution：
+         h = sigmoid(sum(dot(dataMat[i],weights.transpose())))
+         use' dot（A,B）' instead of '*' 
+         注：dot 是矩阵乘法  另外还有multiply：对应分量相乘 ，结果仍是矩阵
+         
+【3】
+    del(dataIndex[randIndex])
+TypeError: 'range' object doesn't support item deletion
+Solution：
+    dataIndex = list(range(m))
+注：这个问题在上一章也遇到过 😔 要记住
+         
