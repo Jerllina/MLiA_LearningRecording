@@ -1,0 +1,8 @@
+【1】
+    x = arange(-3.0, 3.0, 0.1)     #size:1x60
+    y = (-weights[0]-weights[1]*x)/weights[2]   #size:1x60
+    ax.plot(x, y)
+ValueError: x and y must have same first dimension, but have shapes (60,) and (1, 60)
+
+Solution:
+    ax.plot(x, y.transpose()) 
