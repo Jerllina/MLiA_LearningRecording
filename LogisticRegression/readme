@@ -35,4 +35,11 @@ TypeError: 'range' object doesn't support item deletion
 Solution：
     dataIndex = list(range(m))
 注：这个问题在上一章也遇到过 😔 要记住
-         
+
+【4】
+RuntimeWarning: overflow encountered in exp
+  return 1.0/(1+exp(-inX))
+Solution:
+def sigmoid(inX):  
+    return longfloat( 1.0/(1+exp(-inX))) 
+ 注：sigmoid溢出了，此处不改也可运行
