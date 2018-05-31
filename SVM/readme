@@ -1,0 +1,8 @@
+【1】
+TypeError: only length-1 arrays can be converted to Python scalars
+
+注：数据类型的强制转换仅对单个数据  float() int() 等等一次只能转换一个数据
+
+【2】
+array filtering
+alphas[alphas>0]此种用法仅限Numpy类型的数组过滤切片
