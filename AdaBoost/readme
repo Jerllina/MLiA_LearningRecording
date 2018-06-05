@@ -1,1 +1,21 @@
+【1】
+classifier=adaBoostTrainDS(dataArr,labelArr,numIt=30)
+.......
+classEst = stumpClassify(dataMatrix,classifierArr[i]['dim'],classifierArr[i]['thresh'],classifierArr[i]['ineq'])
+TypeError: list indices must be integers or slices, not str
 
+Solution:
+通过查看原始代码和变量属性可知，书中的原始的classifierArr 得到的是
+adaBoostTrainDS(dataArr,classLabels,numIt=40)
+.......
+  return weakClassArr,aggClassEst
+ 包括了两个变量weakClassArr,aggClassEst
+ 所以需要修改这个使用方式
+ 可以改成
+    classifier=adaBoostTrainDS(dataArr,labelArr,numIt=30)#先获取
+    classifierArr=classifier[0]#再选取weakClassArr这个
+ 或者直接
+    classifierArr，aggClassEst=adaBoostTrainDS(dataArr,labelArr,numIt=30)
+    #然后直接使用classifierArr
+ 
+ 
