@@ -1,2 +1,4 @@
 【1】
 points need to be sorted in increasing order before being plotted
+【2】
+python3.3里面， 用urllib.request 而不是 urllib2
