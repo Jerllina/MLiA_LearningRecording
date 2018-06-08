@@ -1,0 +1,29 @@
+【1】   
+def createTree(dataSet, leafType=regLeaf, errType=regErr, ops=(1,4)):# dataSet → NumPy Mat ,array filtering
+NameError: name 'regLeaf' is not defined
+
+Solution:
+把regLeaf和regErr放在createTree函数之前就可以编译通过了
+ →定义在使用之前
+【2】
+fltLine = map(float, curLine)
+TypeError: unsupported operand type(s) for /: 'map' and 'int'
+
+Solution:
+fltLine = list(map(float, curLine))
+注:产生错误的不是mean的除的那行 是操作数的格式问题，检查数据格式
+【3】
+for splitVal in set(dataSet[:,featIndex]):
+TypeError: unhashable type: 'matrix'
+
+Solution:
+for splitVal in set(dataSet[:,featIndex].T.tolist()[0])
+注：依然是数据格式的问题 矩阵转换为列表 
+  通过观察上方其他代码也可知 
+【4】 
+mat0 = dataSet[nonzero(dataSet[:,feature] > value)[0],:][0]
+IndexError: index 0 is out of bounds for axis 0 with size 0
+
+Solution:
+mat0 = dataSet[nonzero(dataSet[:,feature] > value)[0],:]
+注：去掉后一维的【0】切片即可，并不需要
