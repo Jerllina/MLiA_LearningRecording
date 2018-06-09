@@ -27,3 +27,10 @@ IndexError: index 0 is out of bounds for axis 0 with size 0
 Solution:
 mat0 = dataSet[nonzero(dataSet[:,feature] > value)[0],:]
 注：去掉后一维的【0】切片即可，并不需要
+【5】
+from Tkinter import *
+ModuleNotFoundError: No module named 'Tkinter'
+
+Solution:
+from tkinter import *
+。。。。。。。。。。。。。。改成小写就好了(ˉ▽ˉ；)...醉了
