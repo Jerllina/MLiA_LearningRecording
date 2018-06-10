@@ -34,3 +34,11 @@ ModuleNotFoundError: No module named 'Tkinter'
 Solution:
 from tkinter import *
 。。。。。。。。。。。。。。改成小写就好了(ˉ▽ˉ；)...醉了
+【6】
+reDraw.a.scatter(reDraw.rawDat[:,0], reDraw.rawDat[:,1], s=5) #use scatter for data set
+ValueError: Masked arrays must be 1-D
+
+Solution:
+reDraw.a.scatter(array(reDraw.rawDat[:,0]), array(reDraw.rawDat[:,1]), s=5)
+注：
+使用numpy画散点图出现的问题= = 需要把数据转格式 array()
