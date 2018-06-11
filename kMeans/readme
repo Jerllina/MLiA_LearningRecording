@@ -1,0 +1,8 @@
+【1】
+rangeJ = float(max(dataSet[:,j])-minJ) #range=max-min
+TypeError: unsupported operand type(s) for -: 'map' and 'map'
+
+Solution：
+ fltLine = map(float,curLine)  →  fltLine = list(map(float,curLine))
+ 注：查看variable 属性可以发现是文件读取模块的问题 dataSet 里的元素格式为map objective
+        因此要先把映射 map 转换为list 格式
