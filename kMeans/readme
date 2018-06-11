@@ -6,3 +6,21 @@ Solution：
  fltLine = map(float,curLine)  →  fltLine = list(map(float,curLine))
  注：查看variable 属性可以发现是文件读取模块的问题 dataSet 里的元素格式为map objective
         因此要先把映射 map 转换为list 格式
+【2】
+(1)AttributeError: module 'urllib' has no attribute 'urlopen'
+(2)AttributeError: module 'urllib' has no attribute 'urlencode'
+
+Solution:
+urllib.request.urlopen()
+&
+urllib.parse.urlencode()
+注：
+这是python2 和 python3 的改动
+【3】
+URLError: <urlopen error [Errno 11001] getaddrinfo failed>
+
+Solution：
+
+注：
+查了一下http状态码 ：没有网络连接(没有路由到特定服务器)，或者服务器不存在
+尚未解决
