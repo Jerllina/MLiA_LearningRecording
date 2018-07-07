@@ -1,0 +1,11 @@
+【1】
+if not ssCnt.has_key(can): ssCnt[can]=1
+AttributeError: 'dict' object has no attribute 'has_key'
+Solution：
+if can not in ssCnt: ssCnt[can]=1
+注：
+has_key was removed in Python 3. From the documentation:
+    Removed dict.has_key() – use the in operator instead.
+    Python 3 已弃用 has_key 这一方法
+    
+【2】
