@@ -9,3 +9,20 @@ has_key was removed in Python 3. From the documentation:
     Python 3 已弃用 has_key 这一方法
     
 【2】
+numItems = float(len(D))
+TypeError: object of type 'map' has no len()
+Solution：
+D=list(map(set,dataSet))
+
+注：
+map的python版本的问题
+需要将D 先转换成list格式才能len 
+
+【3】
+print(L1[0])
+IndexError: list index out of range
+Solution：
+return list(map(frozenset, C1))
+注：
+在将C1格式转换为list之前 运行结果一直不正确
+转换之后 得到了正确的L1 
