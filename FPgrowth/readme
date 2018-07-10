@@ -1,0 +1,7 @@
+【1】
+for k in headerTable.keys():
+RuntimeError: dictionary changed size during iteration
+Solution：
+for k in list(headerTable.keys()):
+注：
+将字典转换为list类型进行del操作
