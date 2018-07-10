@@ -5,3 +5,12 @@ Solution：
 for k in list(headerTable.keys()):
 注：
 将字典转换为list类型进行del操作
+
+【2】
+bigL = [v[0] for v in sorted(headerTable.items(), key=lambda p: p[1])]#(sort header table) 默认顺序增序
+TypeError: '<' not supported between instances of 'treeNode' and 'treeNode'
+Solution：
+bigL = [v[0] for v in sorted(headerTable.items(), key=lambda p: p[1][0])]
+注：
+因为结点的格式
+p[1]里仍有两个值 需要再切片 p[1][0]
