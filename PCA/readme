@@ -1,0 +1,7 @@
+【1】
+meanVals = mean((dataMat), axis=0)# calc mean
+TypeError: unsupported operand type(s) for /: 'map' and 'int'
+Solution:
+datArr = [list(map(float,line)) for line in stringArr]
+注：
+发现格式不对 dataMat里的元素是map格式 无法求mean 因此返回到loadDataSet中进行补充修改
